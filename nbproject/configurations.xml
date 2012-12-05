@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="84">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <incDir>
+            <pElem>../JNA_CGAL_Bindings</pElem>
+          </incDir>
+          <commandLine>-frounding-math</commandLine>
+        </cTool>
+        <ccTool>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>../JNA_CGAL_Bindings</pElem>
+          </incDir>
+          <commandLine>-frounding-math</commandLine>
+        </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/usr/local/lib</pElem>
+          </linkerAddLib>
+          <linkerDynSerch>
+            <pElem>/usr/local/lib</pElem>
+          </linkerDynSerch>
+          <linkerLibItems>
+            <linkerLibFileItem>/usr/local/lib/libCGAL.so</linkerLibFileItem>
+            <linkerLibFileItem>../JNA_CGAL_Bindings/dist/Debug/GNU-Linux-x86/libJNA_CGAL_Bindings.so</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>
