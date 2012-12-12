@@ -42,8 +42,8 @@ OBJECTFILES= \
 CFLAGS=-frounding-math
 
 # CC Compiler Flags
-CCFLAGS=-m64 -frounding-math
-CXXFLAGS=-m64 -frounding-math
+CCFLAGS=-m32 -frounding-math
+CXXFLAGS=-m32 -frounding-math
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -69,7 +69,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cgalsimplificationtest: ${OBJECTFILES
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../JNA_CGAL_Bindings -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../JNA_CGAL_Bindings -I/usr/include/c++/4.7/i686-linux-gnu -I/usr/include/i386-linux-gnu -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

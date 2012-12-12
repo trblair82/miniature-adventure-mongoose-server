@@ -41,9 +41,11 @@
           <commandLine>-frounding-math</commandLine>
         </cTool>
         <ccTool>
-          <architecture>2</architecture>
+          <architecture>1</architecture>
           <incDir>
             <pElem>../JNA_CGAL_Bindings</pElem>
+            <pElem>/usr/include/c++/4.7/i686-linux-gnu</pElem>
+            <pElem>/usr/include/i386-linux-gnu</pElem>
           </incDir>
           <commandLine>-frounding-math</commandLine>
         </ccTool>
