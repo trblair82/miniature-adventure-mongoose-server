@@ -4,15 +4,13 @@
  *
  * Created on November 19, 2012, 5:23 PM
  */
-#include <stdlib.h>
-#include <cstdlib>
+
 #include <fstream>
 #include "CGAL_JNA_Utils.h"
+#include "JNA_CGAL_Geometry_Simplifier.h"
 
 
-//#include <CGAL/Simple_cartesian.h>
-//#include <CGAL/Polyhedron_3.h>
-//#include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
+
 
 
 
@@ -44,40 +42,27 @@ int main(int argc, char** argv) {
         }
         floatCount++;
     }
-    BASE_GEOMETRY testGeometry;
-    testGeometry = getBaseGeometry(triangles,numTriangles);
+//    BASE_GEOMETRY testGeometry;
+//    testGeometry = deserializeBaseGeometry(triangles,numTriangles);
+//    PolyhedralSurface poly = buildPolyhedron(testGeometry);
     
-    for(int j = 0;j<testGeometry.numVerts; j++){
-        Point_3 vert1 = testGeometry.vertices[j];
-        float x1 = vert1.x();
-        float y1 = vert1.y();
-        float z1 = vert1.z();
-        
-        int test = 0;
+    SERIALIZED_BASE_GEOMETRY geometry = JNA_CGAL_Simplify_Geometry(triangles, numTriangles);
+    for(int i = 0;i<geometry.numTriangles*3;i++){
+        int test = geometry.triangleIndex[i];
+        int ball = 0;
+    }
+    for(int i = 0;i<geometry.numVerts*3;i++){
+        int test1 = geometry.vertices[i];
+        int ball2 = 0;
     }
     
-    for(int i = 0;i<testGeometry.numTriangles*3;i+=3){
+    
+    
+    
+    int balls = 0;
         
-        int index1 = testGeometry.triangleIndex[i];
-        Point_3 vert1 = testGeometry.vertices[index1];
-        float x1 = vert1.x();
-        float y1 = vert1.y();
-        float z1 = vert1.z();
-        int index2 = testGeometry.triangleIndex[i + 1];
-        Point_3 vert2 = testGeometry.vertices[index2];
-        float x2 = vert2.x();
-        float y2 = vert2.y();
-        float z2 = vert2.z();
-        int index3 = testGeometry.triangleIndex[i + 2];
-        Point_3 vert3 = testGeometry.vertices[index3];
-        float x3 = vert3.x();
-        float y3 = vert3.y();
-        float z3 = vert3.z();
-        
-        int test1 = 0;
-        
-    }
-    freeBaseGeometry();
+    
+    free_CGAL_JNA_Utils();
     return 0; 
     
 }
